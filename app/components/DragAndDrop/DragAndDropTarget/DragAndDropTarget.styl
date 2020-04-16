@@ -1,0 +1,43 @@
+:root
+  --dropped-bg: #b4dcb4
+  --dropped-border: darkgreen
+  --highlight-bg: #c8e4ef
+  --highlight-border: #638fc2
+
+.targetZone
+  display flex
+  padding 20px
+  width 100%
+  min-width 0
+
+.targetZoneCol
+  box-sizing border-box
+  display block
+  margin-right 20px
+
+.targetZoneColItem
+  cursor pointer
+  margin-top 15px
+  background var(--dropped-bg)
+  border 1px solid var(--dropped-border)
+
+  &.isHighLighted
+    opacity 0
+    border-color var(--highlight-border)
+    background var(--highlight-bg)
+
+    &.isShown
+      transition: opacity 150ms ease-in;
+      opacity 1
+
+.noPointerEvents *
+  pointer-events none
+
+.enter
+  border-color var(--highlight-border)
+  background var(--highlight-bg)
+
+.enterActive
+  background var(--dropped-bg)
+  border-color var(--dropped-border)
+  transition: border 150ms ease-in, background 150ms ease-in;
